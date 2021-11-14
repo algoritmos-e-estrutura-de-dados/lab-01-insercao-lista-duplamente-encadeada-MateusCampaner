@@ -25,8 +25,9 @@ class Lista:
             self.tail = node
             return
 
-        self.tail.next = node
-        node.prev = self.tail
+        self.tail.next = node #
+        node.prev = self.tail #
+        self.tail = node
 
 
     def add(self, node):
@@ -41,8 +42,9 @@ class Lista:
             self.tail = node
             return
 
-        node.next = self.init
-        self.init = node
+        node.next = self.init #
+        self.init = node #
+        self.init.prev = node
 
     def __str__(self):
         str_aux = '['
